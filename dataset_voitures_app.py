@@ -23,9 +23,13 @@ df_voitures = pd.read_csv(link)
 st.write(df_voitures)
 
 
-import seaborn as sns
-viz_correlation = sns.heatmap(df_voitures.corr(), center=0, cmap = sns.color_palette("vlag", as_cmap=True))
-st.pyplot(viz_correlation.figure)
+#import seaborn as sns
+#viz_correlation = sns.heatmap(df_voitures.corr(), center=0, cmap = sns.color_palette("vlag", as_cmap=True))
+#st.pyplot(viz_correlation.figure)
 
+fig2 = sns.heatmap(df_voitures.corr(),cmap="coolwarm", annot=False, center = 0)
+sns.set(rc = {'figure.figsize':(8,6)})
+plt.title("Heatmap de corrélation")
+fig2
 
 # %%writefile dataset_voitures.py
