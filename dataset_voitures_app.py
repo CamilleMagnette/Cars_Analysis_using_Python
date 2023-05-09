@@ -16,10 +16,12 @@ l'application doit être disponible sur la plateforme de partage.
 Publie ensuite ici le lien de ton application. Le lien doit ressembler à https://share.streamlit.io/wilder/streamlit_app/my_streamlit_app.py.
 """
 
-# Afficher un dataframe
+# Importer le dataframe
 import pandas as pd
 link = "https://raw.githubusercontent.com/murpi/wilddata/master/quests/cars.csv"
 df_voitures = pd.read_csv(link)
+
+# Afficher le dataframe
 st.write(df_voitures)
 
 # Retravailler le dataframe
