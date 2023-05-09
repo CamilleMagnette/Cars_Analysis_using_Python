@@ -22,7 +22,10 @@ link = "https://raw.githubusercontent.com/murpi/wilddata/master/quests/cars.csv"
 df_voitures = pd.read_csv(link)
 st.write(df_voitures)
 
+# Retravailler le dataframe
+df_voitures['continent'] = df_voitures['continent'].factorize()[0]
 
+# Réaliser une heatmap
 import seaborn as sns
 viz_correlation = sns.heatmap(df_voitures.corr(), center=0, cmap = sns.color_palette("vlag", as_cmap=True))
 st.pyplot(viz_correlation.figure)
