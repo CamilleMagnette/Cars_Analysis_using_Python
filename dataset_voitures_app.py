@@ -13,23 +13,36 @@ REALISER :
 une analyse de corrélation et de distribution grâce à différents graphiques et des commentaires.
 des boutons doivent être présents pour pouvoir filtrer les résultats par région (US / Europe / Japon).
 l'application doit être disponible sur la plateforme de partage.
-Publie ensuite ici le lien de ton application. Le lien doit ressembler à https://share.streamlit.io/wilder/streamlit_app/my_streamlit_app.py.
+Publie ensuite ici le lien de ton application. 
+Le lien doit ressembler à https://share.streamlit.io/wilder/streamlit_app/my_streamlit_app.py.
 """
+
+# Créer des onglets
+tab1, tab2, tab3 = st.tabs(['DATA', 'HEATMAP'])
 
 # Importer le dataframe
 import pandas as pd
 link = "https://raw.githubusercontent.com/murpi/wilddata/master/quests/cars.csv"
 df_voitures = pd.read_csv(link)
 
-# Afficher le dataframe
-st.write(df_voitures)
+# Créer 
 
-# Retravailler le dataframe
-df_voitures['continent'] = df_voitures['continent'].factorize()[0]
+with tab1 : 
 
-# Réaliser une heatmap
-import seaborn as sns
-viz_correlation = sns.heatmap(df_voitures.corr(), center=0, cmap = sns.color_palette("vlag", as_cmap=True))
-st.pyplot(viz_correlation.figure)
+  # Afficher le dataframe
+  st.write(df_voitures)
+
+with tab2 : 
+
+  # Retravailler le dataframe
+  df_voitures['continent'] = df_voitures['continent'].factorize()[0]
+
+  # Réaliser une heatmap
+  import seaborn as sns
+  viz_correlation = sns.heatmap(df_voitures.corr(), center=0, cmap = sns.color_palette("vlag", as_cmap=True))
+  st.pyplot(viz_correlation.figure)
+
+# Réaliser une distribution
+
 
 # %%writefile dataset_voitures.py
