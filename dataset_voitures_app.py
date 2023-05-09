@@ -8,16 +8,18 @@ st.title('Hello Wilders, welcome to my application!')
 # streamlit run dataset_voitures_app.py.py
 # Le navigateur va automatiquement ouvrir un nouvelle page streamlit 
 
-"""
-REALISER : 
-une analyse de corrélation et de distribution grâce à différents graphiques et des commentaires.
-des boutons doivent être présents pour pouvoir filtrer les résultats par région (US / Europe / Japon).
-l'application doit être disponible sur la plateforme de partage.
-Publie ensuite ici le lien de ton application. 
-Le lien doit ressembler à https://share.streamlit.io/wilder/streamlit_app/my_streamlit_app.py.
-"""
 
-# Créer des tab
+# REALISER : 
+# une analyse de corrélation et de distribution grâce à différents graphiques et des commentaires.
+# des boutons doivent être présents pour pouvoir filtrer les résultats par région (US / Europe / Japon).
+# l'application doit être disponible sur la plateforme de partage.
+# Publie ensuite ici le lien de ton application. 
+# Le lien doit ressembler à https://share.streamlit.io/wilder/streamlit_app/my_streamlit_app.py.
+
+# CONFIGURER DES ONGLETS AU SEIN DE LA PAGE
+st.sidebar.success("Select Any Page from here")
+
+# CREER DES TAB 
 tab1, tab2, tab3 = st.tabs(['DATA', 'HEATMAP', 'DISTRIBUTION'])
 
 # Importer le dataframe
@@ -25,7 +27,7 @@ import pandas as pd
 link = "https://raw.githubusercontent.com/murpi/wilddata/master/quests/cars.csv"
 df_voitures = pd.read_csv(link)
 
-# Créer 
+# TRAVAILLER SUR LES TAB 
 
 with tab1 : 
 
@@ -46,7 +48,7 @@ with tab3 :
 
   st.write('nous allons réaliser une distribution')
 
-# Réaliser une distribution
+  # Réaliser une distribution
 
 
 # %%writefile dataset_voitures.py
