@@ -17,8 +17,8 @@ Publie ensuite ici le lien de ton application.
 Le lien doit ressembler à https://share.streamlit.io/wilder/streamlit_app/my_streamlit_app.py.
 """
 
-# Créer des onglets
-tab1, tab2, tab3 = st.tabs(['DATA', 'HEATMAP'])
+# Créer des tab
+tab1, tab2, tab3 = st.tabs(['DATA', 'HEATMAP', 'DISTRIBUTION'])
 
 # Importer le dataframe
 import pandas as pd
@@ -41,6 +41,10 @@ with tab2 :
   import seaborn as sns
   viz_correlation = sns.heatmap(df_voitures.corr(), center=0, cmap = sns.color_palette("vlag", as_cmap=True))
   st.pyplot(viz_correlation.figure)
+
+with tab3 : 
+
+  st.write('nous allons réaliser une distribution')
 
 # Réaliser une distribution
 
