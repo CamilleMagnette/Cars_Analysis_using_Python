@@ -7,7 +7,7 @@ Réaliser une étude de corrélation et de distribution via une base de donnée 
 ## ⚙️ Outils principaux : 
 Python (plotly, Seaborn) avec JupyterLab, Streamlit, github 
 
-## 🚗 Source des données :  
+## 🔍 Source des données :  
 [dataset](https://raw.githubusercontent.com/murpi/wilddata/master/quests/cars.csv)
 
 ## ✅ Etapes :
